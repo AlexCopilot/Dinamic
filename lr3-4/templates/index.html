@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №3</title>
+    <style type="text/css">
+    *, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    color: rgb(22, 22, 22);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.calc {
+    width: 600px;
+    height: 320px;
+    margin: auto;
+    background-color: #ecf0f1;
+    border-top: 3px solid #dde5e7;
+    border-bottom: 3px solid #dde5e7;
+}
+form {
+    padding: 20px;
+}
+
+.results {
+    margin-bottom: 40px;
+}
+
+input {
+    height: 30px;
+    width: 150px;
+    transition: all .2s linear;
+}
+
+input:focus {
+    outline: 0;
+    border-color: #bdbdbd;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+
+}
+
+.form_input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input_label {
+    margin-right: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="calc">
+    <form action="/result" method="post">
+        <div class="form_input">
+        <label for="price_input">
+            <span class="input_label">Стоимость недвижимости</span> <input pattern="^\d+$" type="text" id="price_input" name="price" required>
+        </label>
+        </div>
+
+        <div class="form_input">
+        <label for="initial_fee_input">
+            <span class="input_label">Первоначальный взнос</span> <input pattern="^\d+$" type="text" id="initial_fee_input"  name="initial_fee" required>
+        </label>
+        </div>
+
+        <div class="form_input">
+        <label for="term_input">
+            <span class="input_label">Срок кредита, лет</span> <input pattern="^\d+$" type="text" id="term_input"  name="term" required>
+        </label>
+        </div>
+
+        <div class="form_input">
+        <label for="rate_input">
+            <span class="input_label">Процентная ставка, %</span> <input pattern="^\d+$" type="text" id="rate_input"  name="rate" required>
+        </label>
+        </div>
+
+        <div class="form_input">
+        <input type="submit" value="Рассчитать">
+        </div>
+
+
+    </form>
+</div>
+</body>
+</html>

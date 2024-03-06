@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №3</title>
+    <style type="text/css">
+    *, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    color: rgb(22, 22, 22);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.calc {
+    width: 600px;
+    height: 420px;
+    margin: auto;
+    background-color: #ecf0f1;
+    border-top: 3px solid #dde5e7;
+    border-bottom: 3px solid #dde5e7;
+}
+form {
+    padding: 20px;
+}
+
+.results {
+    margin-bottom: 40px;
+}
+
+input {
+    height: 30px;
+    width: 150px;
+    transition: all .2s linear;
+}
+
+input:focus {
+    outline: 0;
+    border-color: #bdbdbd;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+
+}
+
+.form_input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input_label {
+    margin-right: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="calc">
+    <form action="/index" method="post">
+        <div class="form_input">
+            <span class="input_label">Стоимость недвижимости: {{ results[0] }}</span>
+        </div>
+
+        <div class="form_input">
+            <span class="input_label">Первоначальный взнос: {{ results[1] }}</span>
+        </div>
+
+        <div class="form_input">
+            <span class="input_label">Срок кредита, лет: {{ results[2] }}</span>
+        </div>
+
+        <div class="form_input">
+            <span class="input_label">Процентная ставка: {{ results[3] }} %</span>
+        </div>
+
+        <div class="form_input">
+            <span class="input_label">Ежемесячный платеж: {{ results[4] }}</span>
+        </div>
+
+        <div class="form_input">
+            <span class="input_label">Общая плата по кредиту: {{ results[5] }}</span>
+        </div>
+
+        <div class="form_input">
+            <span class="input_label">Переплата: {{ results[6] }}</span>
+        </div>
+
+        <div class="form_input">
+        <input type="submit" value="Пересчитать">
+        </div>
+    </form>
+</div>
+</body>
+</html>
